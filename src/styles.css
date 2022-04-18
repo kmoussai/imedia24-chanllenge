@@ -4,8 +4,11 @@
   display: grid;
   gap: 24px 33px;
   grid-template-columns: repeat(3, 1fr);
+  padding: 5%;
 }
-
+.img-profile {
+  width: 150px;
+}
 .user-card {
   border: 1px solid #ddd;
   display: flex;
@@ -13,7 +16,8 @@
 }
 
 .action-btn {
-  all: unset;
+  /* all: unset; */
+  border: unset;
   width: 66px;
   height: 27px;
 }
@@ -23,4 +27,23 @@
 
 .profile {
   background-color: #49b9dc;
+}
+
+.user-name {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  color: #484848;
+  text-align: left;
+}
+
+.title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 28px;
+  color: #484848;
 }

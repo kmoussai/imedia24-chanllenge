@@ -1,5 +1,10 @@
 import { IUser } from "../types/user";
 
+const handleFetchError = (response: Response) => {
+  if (response.ok) return response.json();
+  else Promise.reject(new Error(response.statusText));
+};
+
 async function getUsers(params: {
   limit?: number;
   page?: number;
@@ -12,14 +17,17 @@ async function getUsers(params: {
       "app-id": "62066a2f508e80d232ca6a72"
     }
   })
-    .then((response) => {
-      if (response.ok) return response.json();
-      else Promise.reject(new Error(response.statusText));
-    })
-    .then((res) => {
-      // console.log(res.data);
-      return res.data;
-    });
+    .then(handleFetchError)
+    .then((res) => res.data);
 }
 
-export { getUsers };
+async function getUserById(id: string): Promise<IUser> {
+  const url = `https://dummyapi.io/data/v1/user/${id}`;
+
+  return fetch(url, {
+    headers: {
+      "app-id": "62066a2f508e80d232ca6a72"
+    }
+  }).then(handleFetchError);
+}
+export { getUsers, getUserById };
