@@ -1,0 +1,26 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  display: grid;
+  gap: 24px 33px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.user-card {
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+}
+
+.action-btn {
+  all: unset;
+  width: 66px;
+  height: 27px;
+}
+.delete {
+  background-color: #dc497e;
+}
+
+.profile {
+  background-color: #49b9dc;
+}
